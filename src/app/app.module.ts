@@ -18,6 +18,7 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {AuthInterceptor} from './auth/auth-interceptor';
 import {IosService} from './course/ios.service';
 import {AsyncLocalStorageModule} from 'angular-async-local-storage';
+import {PythonModule} from './python/python.module';
 
 
 
@@ -31,6 +32,7 @@ import {AsyncLocalStorageModule} from 'angular-async-local-storage';
     CoreModule,
     HttpClientModule,
     CourseModule,
+    PythonModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,

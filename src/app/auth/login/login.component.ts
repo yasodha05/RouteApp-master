@@ -18,8 +18,7 @@ export class LoginComponent implements OnInit {
   @Input() errorMessage: string | null;
 
   @Output() submitted = new EventEmitter<Authenticate>();
-  constructor(private auth:AuthService, private router:Router, private route:ActivatedRoute) { }
-
+  constructor(private auth:AuthService, private router:Router, private route:ActivatedRoute) {}
   ngOnInit() {
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
     console.log(this.returnUrl);

@@ -10,6 +10,8 @@ import {JavaComponent} from './course/java/java.component';
 import {JavaListComponent} from './course/java/java-list/java-list.component';
 import {JavaDetailComponent} from './course/java/java-detail/java-detail.component';
 import {IosDetailComponent} from './course/ios/ios-detail/ios-detail.component';
+import {PythonModule} from './python/python.module';
+
 
 
 const appRoutes: Routes = [
@@ -22,14 +24,17 @@ const appRoutes: Routes = [
       {path:'java',  component:JavaComponent, children:[
       {path:'javaList', component:JavaListComponent, outlet:'List'},
       {path:':id', component:JavaDetailComponent , outlet:'Detail'}
-    ]}
- ];
+    ]},
+  {path:'python', loadChildren:'./python/python.module#PythonModule'}
+  ];
 
 @NgModule({
 
   imports: [
    /* RouterModule.forRoot(appRoutes, {preloadingStrategy: PreloadAllModules})*/
-    RouterModule.forRoot(appRoutes, { enableTracing: true })
+    PythonModule,
+    RouterModule.forRoot(appRoutes)
+   /* RouterModule.forRoot(appRoutes, { enableTracing: true })*/
   ],
   exports: [
     RouterModule
